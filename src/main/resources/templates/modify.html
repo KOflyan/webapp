@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<head>
+    <title>Modify data</title>
+</head>
+<body>
+<h1>Change the data</h1>
+<form action="#" th:action="@{/modify/} + ${id}" th:object="${webAppDto}" method="post">
+    <table>
+        <tr>
+            <td><p th:text="#{first.name}"></p></td>
+            <td><input type="text" th:value="${customer.firstName}" th:id="firstName" th:name="firstName"/></td>
+        </tr>
+        <tr>
+            <td><p th:text="#{last.name}"></p></td>
+            <td><input type="text" th:value="${customer.lastName}" th:id="lastName" th:name="lastName"/></td>
+
+        </tr>
+        <tr>
+            <td><p th:text="#{user.birthday}"></p></td>
+            <td><input type="text" th:value="${customer.dateOfBirth}" th:id="dateOfBirth" th:name="dateOfBirth"/></td>
+
+        </tr>
+        <tr>
+            <td><p th:text="#{user.name}"></p></td>
+            <td><input type="text" th:value="${customer.username}" th:id="username" th:name="username"/></td>
+
+        </tr>
+        <tr>
+            <td><p th:text="#{user.password}"></p></td>
+            <td><input type="text" th:value="${customer.password}" th:id="password" th:name="password"/></td>
+        </tr>
+        <tr>
+            <td><button type="button" th:text="#{get.back}" onclick="parent.location='/users'"></button></td>
+            <td><button type="submit" th:text="#{data.submit}"></button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

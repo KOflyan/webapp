@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<head>
+    <title>Database</title>
+    <h1 th:if="${#lists.isEmpty(allCustomers)}" th:text="#{table.empty}"></h1>
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th th:text="#{first.name}">First name</th>
+                <th th:text="#{last.name}">Last name</th>
+                <th th:text="#{user.birthday}">Birthday</th>
+                <th th:text="#{user.name}">Username</th>
+                <th th:text="#{user.password}">Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="c : ${allCustomers}" th:id="${c.id}">
+                <td th:text="${c.firstName}"></td>
+                <td th:text="${c.lastName}"></td>
+                <td th:text="${c.dateOfBirth}"></td>
+                <td th:text="${c.username}"></td>
+                <td th:text="${c.password}"></td>
+                <!-- onclick="parent.location=('modify/' + this.parentNode.getAttribute('id')) -->
+                <td><a th:href="@{/modify/} + ${c.id}" class="button" th:text="#{user.change}"></a></td>
+                <td><a th:href="@{modify/delete/} + ${c.id}" class="button" th:text="#{user.delete}"></a></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" th:text="#{get.back}" onclick="parent.location='/'"></button>
+</body>
+</html>

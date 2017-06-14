@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<head>
+    <title>Registration form</title>
+</head>
+    <body>
+    <h1>Registration form</h1>
+    <form action="#" th:action = "@{/}" th:object = "${webAppDto}" method="post">
+    <table>
+        <tr>
+            <td><p th:text="#{first.name}">first.name</p></td>
+            <td><input type="text" th:field="*{firstName}"/></td>
+            <td><p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p></td>
+        </tr>
+        <tr>
+            <td><p th:text="#{last.name}">last.name</p></td>
+            <td><input type="text" th:field="*{lastName}"/></td>
+            <td><p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p></td>
+        </tr>
+        <tr>
+            <td><p th:text="#{user.birthday}">user.birthday</p></td>
+            <td><input type="text" th:field="*{dateOfBirth}"/></td>
+            <td><p th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"></p></td>
+        </tr>
+
+        <tr>
+            <td><p th:text="#{user.name}">user.name</p></td>
+            <td><input type="text" th:field="*{username}"/></td>
+            <td><p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p></td>
+
+        </tr>
+
+        <tr>
+            <td><p th:text="#{user.password}">user.password</p></td>
+            <td><input type="text" th:field="*{password}"/></td>
+            <td><p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p></td>
+        </tr>
+        <tr>
+            <td>
+                <!-- Redirect on click -->
+                <button type="button" th:text="#{get.users}" onclick="parent.location='users'"></button>
+            </td>
+            <td>
+                <button type="submit" th:text="#{register.now}"></button>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
