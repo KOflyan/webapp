@@ -38,7 +38,7 @@ public class WebAppController extends WebMvcConfigurerAdapter {
 
     /** Initial state of form page.
      *  User enters data, which is saved to data transfer object.
-     * */
+     */
     @GetMapping("/")
     public String showForm(WebAppDto webAppDto) {
         return "form";
@@ -47,7 +47,7 @@ public class WebAppController extends WebMvcConfigurerAdapter {
     /** Post state.
      *  When submitted, data is validated and either parsed further or discarded.
      *  If the data is OK, a new customer is added to the database.
-     * */
+     */
     @PostMapping("/")
     public String showResult(@Valid WebAppDto webAppDto, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {

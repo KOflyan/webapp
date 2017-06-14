@@ -2,8 +2,6 @@ package com.webapp.dao.entity;
 
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /** Entity. Database operator. */
 @Entity

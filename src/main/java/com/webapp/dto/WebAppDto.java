@@ -4,10 +4,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/** Data transfer object. Validates.*/
+/** Data transfer object. Validates input data.*/
 public class WebAppDto {
 
     @Size(min = 1)

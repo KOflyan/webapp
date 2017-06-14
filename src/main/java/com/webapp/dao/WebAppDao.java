@@ -1,8 +1,6 @@
 package com.webapp.dao;
 
 import com.webapp.dao.entity.CustomerEntity;
-import org.hibernate.annotations.common.util.impl.LoggerFactory;
-import org.jboss.logging.Logger;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -17,10 +15,12 @@ public class WebAppDao {
     @PersistenceContext
     private EntityManager entityManager;
 
+    /** Add customer to the database. */
     public void add(CustomerEntity c) {
         entityManager.persist(c);
     }
 
+    /** Remove customer from database. */
     public void remove(CustomerEntity c) {
         if (entityManager.contains(c)) {
             entityManager.remove(c);

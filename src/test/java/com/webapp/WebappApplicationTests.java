@@ -1,7 +1,5 @@
 package com.webapp;
 
-import com.webapp.controller.WebAppController;
-import com.webapp.dao.entity.CustomerEntity;
 import com.webapp.service.CustomerRegistrationService;
 import org.junit.Before;
 import org.junit.Test;
