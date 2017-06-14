@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-/** Service. */
+/** Service for managing requests. */
 @Service
 @Transactional
 public class CustomerRegistrationService {
@@ -20,6 +20,7 @@ public class CustomerRegistrationService {
     private WebAppDao dao;
 
 
+    /** Format given date to more pleasant pattern. */
     private String formatDate(Date birthDate) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
         return sdf.format(birthDate);

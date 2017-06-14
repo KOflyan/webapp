@@ -13,8 +13,6 @@ import java.util.List;
 @Repository
 public class WebAppDao {
 
-    private final Logger logger = LoggerFactory.logger(WebAppDao.class);
-
     /** Managing set of entities. */
     @PersistenceContext
     private EntityManager entityManager;
@@ -33,14 +31,15 @@ public class WebAppDao {
         return entityManager.createQuery("select c from CustomerEntity c").getResultList();
     }
 
+    /** Get customer by id. */
     public CustomerEntity getCustomer(long id) {
         String query = "select c from CustomerEntity c where c.id = :id";
-        CustomerEntity c = (CustomerEntity) entityManager.createQuery(query)
+        return (CustomerEntity) entityManager.createQuery(query)
                 .setParameter("id", id)
                 .getSingleResult();
-        return c;
     }
 
+    /** Update the customer's parameters. */
     public void update(long id, String firstName, String lastName, String dateOfBirth,
                        String username, String password) {
 

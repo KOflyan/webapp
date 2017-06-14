@@ -5,6 +5,7 @@ import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/** Entity. Database operator. */
 @Entity
 @Table
 public class CustomerEntity {

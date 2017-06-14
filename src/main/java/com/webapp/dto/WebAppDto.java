@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/** Data transfer object. */
+/** Data transfer object. Validates.*/
 public class WebAppDto {
 
     @Size(min = 1)
