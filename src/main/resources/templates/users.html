@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="c : ${allCustomers}" th:id="${c.id}">
+            <tr th:each="c : ${allCustomers}">
                 <td th:text="${c.firstName}"></td>
                 <td th:text="${c.lastName}"></td>
                 <td th:text="${c.dateOfBirth}"></td>

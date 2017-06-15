@@ -19,13 +19,11 @@ public class CustomerRegistrationService {
     @Autowired
     private WebAppDao dao;
 
-
     /** Format given date to more pleasant pattern. */
     private String formatDate(Date birthDate) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
         return sdf.format(birthDate);
     }
-
 
     public List<CustomerEntity> getAllCustomers() {
         return dao.getAllCustomers();
