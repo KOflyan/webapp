@@ -27,6 +27,7 @@ public class WebAppDao {
         }
     }
 
+    /** Get all customers. */
     public List<CustomerEntity> getAllCustomers() {
         return entityManager.createQuery("select c from CustomerEntity c").getResultList();
     }
@@ -43,8 +44,8 @@ public class WebAppDao {
     public void update(long id, String firstName, String lastName, String dateOfBirth,
                        String username, String password) {
 
-        String query = "update CustomerEntity e set e.firstName = :firstName, e.lastName = :lastName, " +
-                "e.dateOfBirth = :dateOfBirth, e.username = :username, e.password = :password where e.id = :id";
+        String query = "update CustomerEntity c set c.firstName = :firstName, c.lastName = :lastName, " +
+                "c.dateOfBirth = :dateOfBirth, c.username = :username, c.password = :password where c.id = :id";
         entityManager.createQuery(query)
                 .setParameter("id", id)
                 .setParameter("firstName", firstName)
