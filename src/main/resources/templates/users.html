@@ -3,8 +3,8 @@
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 <head>
     <title>Database</title>
-    <h1 th:if="${#lists.isEmpty(allCustomers)}" th:text="#{table.empty}"></h1>
 </head>
+<h1 th:if="${#lists.isEmpty(allCustomers)}" th:text="#{table.empty}"></h1>
 <body>
     <table class="table">
         <thead>
